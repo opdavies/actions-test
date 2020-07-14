@@ -2,7 +2,8 @@
 name: Remove the 'next' label from closed issues
 
 on:
-  issues: [closed]
+  issues:
+    closed:
 
 tasks:
   unlabel:
