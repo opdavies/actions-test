@@ -5,13 +5,13 @@ on:
   issues:
     closed:
 
-tasks:
+jobs:
   unlabel:
-    - name: Remove the 'next' label
+    runs-on: ubuntu-latest
 
-      runs-on: ubuntu-latest
-      
-      uses: actions-ecosystem/action-remove-labels@v1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        labels: next
+    steps:
+      - name: Remove the 'next' label
+        uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: next
