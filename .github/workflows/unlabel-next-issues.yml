@@ -3,7 +3,7 @@ name: Remove the 'next' label from closed issues
 
 on:
   issues:
-    closed:
+    types: [closed]
 
 jobs:
   unlabel:
