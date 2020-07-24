@@ -1,0 +1,6 @@
+command('hello'): |
+  #!bash|@
+  passthru "echo @('message')"
+
+attributes:
+  message: Hello world!

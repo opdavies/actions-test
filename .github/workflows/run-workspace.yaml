@@ -1,0 +1,20 @@
+---
+name: Install Workspace
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Say hello
+        uses: opdavies/github-action-workspace@v1
+        with:
+          args: hello
