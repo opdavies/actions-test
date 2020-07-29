@@ -1,16 +1,16 @@
-name: "Issue Labeler"
+name: Add Label
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  triage:
+  add_label:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: github/issue-labeler@v2.0
+      - uses: actions/checkout@v2
+
+      - uses: actions-ecosystem/action-add-labels@v1
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: .github/labeler.yml
-          enable-versioned-regex: 0
+          github_token: ${{ secrets.github_token }}
+          labels: needs-triage
