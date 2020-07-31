@@ -14,16 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - run: echo $GITHUB_HEAD_REF
-
       - run: |
-          # git checkout $GITHUB_HEAD_REF
-          
           git config --local user.email "github-action[bot]@github.com"
           git config --local user.name "GitHub Action Bot"
 
-          TAG='release-'`date '+%Y-%m-%d-%H.%M.%S'`
-          echo $TAG
+          TAG=`date '+%Y-%m-%d-%H.%M.%S'`
 
           git tag $TAG
           git push origin refs/tags/${TAG}
