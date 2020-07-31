@@ -26,4 +26,4 @@ jobs:
           echo $TAG
 
           git tag $TAG
-          git push origin refs/tags/{$TAG}
+          git push origin refs/tags/${TAG}
