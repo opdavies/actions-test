@@ -24,3 +24,6 @@ jobs:
 
           TAG='release-'`date '+%Y-%m-%d-%H.%M.%S'`
           echo $TAG
+
+          git tag $TAG
+          git push origin refs/tags/{$TAG}
