@@ -1,0 +1,14 @@
+name: Tag releases to the main branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  - name: Tag a new release
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - runs: echo "boo"
