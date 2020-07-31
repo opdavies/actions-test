@@ -12,4 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - run: echo "boo"
+      - run: |
+          git config --local user.email "github-action[bot]@github.com"
+          git config --local user.name "GitHub Action Bot"
+
+          TAG='release-'`date '+%Y-%m-%d-%H.%M.%S'`
+          echo $TAG
