@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - run: echo $GITHUB_HEAD_REF
+
       - run: |
+          git checkout $GITHUB_HEAD_REF
+          
           git config --local user.email "github-action[bot]@github.com"
           git config --local user.name "GitHub Action Bot"
 
