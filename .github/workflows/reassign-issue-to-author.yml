@@ -1,0 +1,22 @@
+name: Re-assign issues 
+
+on:
+  project_column:
+    types: [moved]
+
+jobs:
+  in-progress:
+    name: Assign the issue to the person who moved it to in-progress
+
+    runs-on: ubuntu-lastest
+
+    steps:
+      - run: echo 'working'
+
+  testing:
+    name: Re-assign issue to its creator for testing
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo 'working'
