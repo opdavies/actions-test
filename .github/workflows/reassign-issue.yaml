@@ -1,0 +1,15 @@
+name: Re-assign issue when moved
+
+on:
+  project_card:
+    types: [moved]
+
+jobs:
+  - name: Re-assign issue
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@47f7cf65b5ced0830a325f705cad64f2f58dddf7 # v3.1.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            console.log(context.payload)
